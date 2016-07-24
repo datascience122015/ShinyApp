@@ -9,7 +9,7 @@ hitheme     : tomorrow
 widgets     : [mathjax, bootstrap, shiny, interactive] # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft, selfcontained}
 knit        : slidify::knit2slides
-ext_widgets : {rCharts: [libraries/nvd3, libraries/highcharts]}
+
 ---
 
 ===
