@@ -1,1 +1,1 @@
-# ShinyApp
+# Slidify Presentation
