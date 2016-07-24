@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny Application and Reproducible Pitch</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny Application and Reproducible Pitch">
+  <meta name="author" content="Suparna Sen">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/bootstrap/css/bootstrap.css"></link>
+<link rel=stylesheet href="libraries/widgets/interactive/css/aceeditor.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny Application and Reproducible Pitch</h1>
+    <h2>Data Product - Coursera Project</h2>
+    <p>Suparna Sen<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>Overview</h1>
+
+<p>The application is built in the context of the course Developing <strong>Data Products</strong> of the Coursera Data Science Specialization.</p>
+
+<h2>Application : BODY MASS INDEX</h2>
+
+<ul>
+<li>The app developed for the first part of the assignment is available at:</li>
+</ul>
+
+<p><a href="https://suparnasen.shinyapps.io/DataProductProjectApp/">https://suparnasen.shinyapps.io/DataProductProjectApp/</a> </p>
+
+<ul>
+<li>Source code for ui.R and server.R files are available at:</li>
+</ul>
+
+<p><a href="https://github.com/datascience122015/ShinyApp">https://github.com/datascience122015/ShinyApp</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>Understanding BMI</h1>
+
+<p>The body mass index (BMI) is a statistic developed by Adolphe Quetelet in the 1900&#39;s for evaluating body mass. It is not related to gender and age. It uses the same formula for men as for women and children.</p>
+
+<p>The body mass index is calculated based on the following formula:</p>
+
+<p>Bodyweight in kilograms divided by height in meters squared</p>
+
+<p>\[BMI = \frac{x KG}{y Meter *  y Meter}`\]</p>
+
+<p>Where:
+x=bodyweight in KG
+y=height in m</p>
+
+<p>The result is in kilograms by meters squared, or KG/M2. In most cases, people simply leave out this designation. It doesn&#39;t have any real significance because humans don&#39;t equate to real mathematical squares as the formula might suggest.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>Functionality   </h1>
+
+<p><strong>Inputs</strong> to the System:</p>
+
+<ol>
+<li>User Name</li>
+<li>Age</li>
+<li>Height</li>
+<li>Weight</li>
+</ol>
+
+<p><strong>Expected output</strong> from the System:</p>
+
+<ol>
+<li>Calculated BMI</li>
+<li>System registered input data </li>
+<li>Recommendation from the system</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>Technical Details</h1>
+
+<p>The application is fully contained in the files <strong>server.R and ui.R</strong>, and the user input widgets are monitored for changes.</p>
+
+<p>Once a change is detected, a segment of code is executed, making the calculations requested, and the screen is updated.</p>
+
+<p>To show information to the user there&#39;s two sections available. The first one will always show the date the user has inserted, and the second one will show the results of the calculations made.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>Shiny App</h1>
+
+<p>&lt;!--html_preserve--&gt;<div class="shiny-input-panel"></p>
+
+<div class="shiny-flow-layout">
+<div>
+<div class="form-group shiny-input-container">
+<label for="name">Name:</label>
+<input id="name" type="text" class="form-control" value="Hello!!!"/>
+</div>
+
+<p></div></p>
+
+<div>
+<div class="form-group shiny-input-container">
+<label for="age">Age (greater than 18):</label>
+<input id="age" type="number" class="form-control" value="19" min="19" max="95" step="1"/>
+</div>
+
+<p></div></p>
+
+<div>
+<div id="sex" class="form-group shiny-input-radiogroup shiny-input-container">
+<label class="control-label" for="sex">Gender:</label>
+<div class="shiny-options-group">
+<div class="radio">
+<label>
+<input type="radio" name="sex" value="male" checked="checked"/>
+<span>Male</span>
+</label>
+</div>
+
+<div class="radio">
+<label>
+<input type="radio" name="sex" value="female"/>
+<span>Female</span>
+</label>
+</div>
+
+<div class="radio">
+<label>
+<input type="radio" name="sex" value="neutral"/>
+<span>Neutral</span>
+</label>
+</div>
+
+<p></div>
+</div>
+</div></p>
+
+<div>
+<div class="form-group shiny-input-container">
+<label class="control-label" for="height">Height in centimeter</label>
+<input class="js-range-slider" id="height" data-min="150" data-max="250" data-from="150" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="1" data-drag-interval="true" data-data-type="number"/>
+</div>
+
+<p></div></p>
+
+<div>
+<div class="form-group shiny-input-container">
+<label class="control-label" for="weight">Body Weight in Kilogram</label>
+<input class="js-range-slider" id="weight" data-min="50" data-max="200" data-from="50" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-keyboard="true" data-keyboard-step="0.666666666666667" data-drag-interval="true" data-data-type="number"/>
+</div>
+
+<p></div>
+</div>
+</div>&lt;!--/html_preserve--&gt;</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+  <article data-timings="">
+    <h1>THANK YOU</h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title=''>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title=''>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title=''>
+         6
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  <script src="libraries/widgets/bootstrap/js/bootstrap.min.js"></script>
+<script src="libraries/widgets/bootstrap/js/bootbox.min.js"></script>
+<script src="libraries/widgets/interactive/js/ace/js/ace.js"></script>
+<script src="libraries/widgets/interactive/js/opencpu-0.5.js"></script>
+<script src="libraries/widgets/interactive/js/interactive.js"></script>
+
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<script>  
+  $(function (){ 
+    $("#example").popover(); 
+    $("[rel='tooltip']").tooltip(); 
+  });  
+  </script>  
+  <script src="shared/shiny.js" type="text/javascript"></script>
+  <script src="shared/slider/js/jquery.slider.min.js"></script>
+  <script src="shared/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="shared/slider/css/jquery.slider.min.css"></link>
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
